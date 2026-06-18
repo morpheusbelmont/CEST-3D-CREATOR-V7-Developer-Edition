@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<!--
+=================================================
+
+CEST 3D CREATOR V7
+
+Creative Educational System Technology
+
+Tecnología creada por:
+
+Lic. Carlos Eduardo Sepúlveda Toro
+
+=================================================
+-->
+
+
+<html lang="es">
+
+
+<head>
+
+
+<meta charset="UTF-8">
+
+
+<meta 
+name="viewport" 
+content="width=device-width, initial-scale=1.0">
+
+
+<title>
+
+CEST 3D CREATOR V7
+
+</title>
+
+
+
+<!-- ESTILOS -->
+
+
+<link 
+rel="stylesheet" 
+href="css/loader.css">
+
+
+<link 
+rel="stylesheet" 
+href="css/style.css">
+
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+
+
+<!-- ======================================
+              PRELOAD
+======================================= -->
+
+
+<section id="preload">
+
+
+
+<img 
+
+src="assets/img/carlos_pixel.png"
+
+id="avatarCEST"
+
+>
+
+
+
+<h1>
+
+CEST ENGINE
+
+</h1>
+
+
+
+<h2>
+
+Cargando Sistema CEST...
+
+</h2>
+
+
+
+
+<div class="barra">
+
+
+<div id="progreso"></div>
+
+
+</div>
+
+
+
+
+<p id="mensajeCarga">
+
+Inicializando...
+
+</p>
+
+
+
+
+<div class="creditosLoader">
+
+
+Tecnología creada por:
+
+<br>
+
+
+<b>
+
+Lic. Carlos Eduardo Sepúlveda Toro
+
+</b>
+
+
+<br>
+
+
+Licenciado en Comunicación e Informática Educativa
+
+<br>
+
+Diseñador Gráfico y Desarrollador Multimedia
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ======================================
+             APLICACIÓN
+======================================= -->
+
+
+
+<main id="app">
+
+
+
+<section id="panel">
+
+
+
+<h3>
+
+CEST STUDIO
+
+</h3>
+
+
+
+
+
+<button onclick="CEST.crear('cubo')">
+
+⬛ Cubo
+
+</button>
+
+
+
+
+<button onclick="CEST.crear('esfera')">
+
+⚪ Esfera
+
+</button>
+
+
+
+
+<button onclick="CEST.crear('piramide')">
+
+🔺 Pirámide
+
+</button>
+
+
+
+
+<button onclick="CEST.crear('cilindro')">
+
+⭕ Cilindro
+
+</button>
+
+
+
+
+<button onclick="CEST.crear('casa')">
+
+🏠 Casa
+
+</button>
+
+
+
+
+<button onclick="CEST.crear('estrella')">
+
+⭐ Estrella
+
+</button>
+
+
+
+
+
+<hr>
+
+
+
+
+<button onclick="CEST.mover()">
+
+🖐 Mover
+
+</button>
+
+
+
+<button onclick="CEST.rotar()">
+
+🔄 Rotar
+
+</button>
+
+
+
+
+<button onclick="CEST.escalar()">
+
+📏 Escalar
+
+</button>
+
+
+
+
+<hr>
+
+
+
+<button onclick="CEST.color('#ff0000')">
+
+Rojo
+
+</button>
+
+
+
+<button onclick="CEST.color('#00ffff')">
+
+Azul CEST
+
+</button>
+
+
+
+<button onclick="CEST.metal()">
+
+Metal
+
+</button>
+
+
+
+<button onclick="CEST.cristal()">
+
+Cristal
+
+</button>
+
+
+
+
+<hr>
+
+
+
+<label>
+
+Importar GLB / GLTF
+
+</label>
+
+
+<input 
+
+type="file"
+
+accept=".glb,.gltf"
+
+onchange="CEST.importar(event)"
+
+>
+
+
+
+
+
+<button onclick="CEST.capturarPNG()">
+
+📸 Captura PNG
+
+</button>
+
+
+
+<button onclick="CEST.guardar()">
+
+💾 Guardar
+
+</button>
+
+
+
+<button onclick="CEST.iniciarReto()">
+
+🎮 Reto
+
+</button>
+
+
+
+
+
+<div id="medidas">
+
+Esperando objeto...
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer>
+
+
+CEST 3D CREATOR V7
+
+<br>
+
+
+Desarrollado por:
+
+<b>
+
+Carlos Eduardo Sepúlveda Toro
+
+</b>
+
+
+</footer>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<!-- ======================================
+          LIBRERÍAS EXTERNAS
+======================================= -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/TransformControls.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+
+
+
+
+
+
+
+
+<!-- ======================================
+          CEST ENGINE
+======================================= -->
+
+
+<script src="js/cest.engine.js"></script>
+
+
+<script src="js/modules/objetos.js"></script>
+
+
+<script src="js/modules/controles.js"></script>
+
+
+<script src="js/modules/materiales.js"></script>
+
+
+<script src="js/modules/medidas.js"></script>
+
+
+<script src="js/modules/exportar.js"></script>
+
+
+<script src="js/modules/importar.js"></script>
+
+
+<script src="js/modules/retos.js"></script>
+
+
+
+
+<!-- SIEMPRE DE ÚLTIMO -->
+
+
+<script src="js/main.js"></script>
+
+
+
+
+
+</body>
+
+
+</html>
